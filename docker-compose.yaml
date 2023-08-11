@@ -22,8 +22,10 @@ services:
     build:
       dockerfile: docker/dockerfiles/php/Dockerfile
     container_name: '${COMPOSE_PROJECT_NAME}-php'
+    entrypoint: /php-fpm-entrypoint.sh
     volumes:
       - ./laravel:/var/www/html
+      - ./docker/entrypoint/php-fpm-entrypoint.sh:/php-fpm-entrypoint.sh
     networks:
       - limitless
 
