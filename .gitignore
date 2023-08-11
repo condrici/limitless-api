@@ -5,4 +5,4 @@
 .vscode
 
 # Volumes synced from docker containers
-volumes/*
+docker/volumes/*
