@@ -27,6 +27,9 @@ fi
 # Create synced docker volumes
 mkdir -p docker/volumes/mysql
 
+# Docker needs execute permissions for the entrypoint files
+chmod g+x docker/entrypoint/php-fpm-entrypoint.sh
+
 #########################
 # INITIALIZATION
 #########################
