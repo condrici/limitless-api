@@ -6,7 +6,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 cd "${SCRIPT_PATH}" && cd ..
 
 #########################
-# CHECK PRE-REQUISITES
+# Make sure that the env files exist
 #########################
 
 DOCKER_ENV_FILE=./.env
@@ -24,15 +24,13 @@ if ! test -f "$LARAVEL_ENV_FILE"; then
     exit
 fi
 
+#########################
+# Prepare shared folders
+#########################
+
 # Create synced docker volumes
 mkdir -p docker/volumes/mysql
 
 # Docker needs execute permissions for the entrypoint files
 chmod g+x docker/entrypoint/php-fpm-entrypoint.sh
 
-#########################
-# INITIALIZATION
-#########################
-
-# Start docker containers
-docker-compose up

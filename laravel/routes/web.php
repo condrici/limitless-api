@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnalyticsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Analytics API Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::post('api/v1.0/analytics/scraper', [AnalyticsController::class, 'scrapePrice']);
