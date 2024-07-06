@@ -33,42 +33,6 @@ services:
     networks:
       - limitless
 
-  # mysql
-  mysql:
-    build:
-      dockerfile: docker/dockerfiles/mysql/Dockerfile
-    container_name: '${COMPOSE_PROJECT_NAME}-mysql'
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: docker
-      MYSQL_USER: docker
-      MYSQL_PASSWORD: docker
-    ports:
-      - "6033:3306"
-    volumes:
-      - ./docker/volumes/mysql/data:/var/lib/mysql
-    networks:
-      limitless:
-        aliases:
-          - mysql
-
-  # phpmyadmin
-  phpmyadmin:
-    build:
-      dockerfile: docker/dockerfiles/phpmyadmin/Dockerfile
-    container_name: '${COMPOSE_PROJECT_NAME}-phpmyadmin'
-    links:
-      - mysql
-    environment:
-      PMA_HOST: mysql
-      PMA_PORT: 3306
-    ports:
-      - "8085:80"
-    networks:
-      limitless:
-        aliases:
-          - phpmyadmin
-
 networks:
   limitless:
     driver: bridge
