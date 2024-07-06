@@ -11,6 +11,7 @@ It is based on Laravel and PHP 8 and it communicates with other microservices li
 - limitless (Installation Repository)
 - limitless-gui (Web Graphical Interface, JavaScript/VueJS, [repository link](https://github.com/condrici/limitless-gui))
 - limitless-api (Web API Gateway, PHP/Laravel, [repository link](https://github.com/condrici/limitless-api))
+- limitless-assets (Asset Management, PHP/Laravel, [repository link](https://github.com/condrici/limitless-assets))
 - limitless-analytics (Analytics, Python/Flask API/BeautifulSoup, [repository link](https://github.com/condrici/limitless-analytics))
 
 #### Installation Requirements
