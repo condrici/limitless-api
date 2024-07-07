@@ -17,4 +17,9 @@ return [
         env("API_ANALYTICS_PROTOCOL") . '://' .
         env("API_ANALYTICS_HOSTNAME") . ':' .
         env("API_ANALYTICS_PORT") . '/api/v1.0',
+
+    'limitless-assets' =>
+        env("API_ASSETS_PROTOCOL") . '://' .
+        env("API_ASSETS_HOSTNAME") . ':' .
+        env("API_ASSETS_PORT") . '/api',
 ];
