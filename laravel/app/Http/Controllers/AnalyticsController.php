@@ -12,7 +12,9 @@ class AnalyticsController extends Controller
 {
     public function __construct(
        private readonly AnalyticsHttpService $analyticsHttpService
-    ) {}
+    ) 
+    {
+    }
 
     /**
      * @param Request $request
